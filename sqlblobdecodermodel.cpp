@@ -55,8 +55,7 @@ QPixmap SqlBlobDecoderModel::imageFromBlobIn(const QModelIndex &index) const
         return {};
     }
     QPixmap pixmap;
-    if (!pixmap.loadFromData(array,"PNG",Qt::AutoColor)
-        && !pixmap.loadFromData(array,"JPG",Qt::AutoColor)) {
+    if (!pixmap.loadFromData(array)) {
         qDebug() << "failed load pixmap";
     }
     return pixmap.scaled(64, 64, Qt::KeepAspectRatio);
